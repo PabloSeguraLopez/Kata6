@@ -1,5 +1,7 @@
 package software.eii.ulpgc.psl.kata6;
 
+import java.util.Arrays;
+
 public class InfectedTown {
     private final String citizens;
 
@@ -8,7 +10,9 @@ public class InfectedTown {
     }
 
     public String purge() {
-        if (citizens.contains("i") || citizens.contains("I")) return "";
-        return citizens;
+        return String.join(" ",
+                Arrays.stream(citizens.split(" "))
+                .filter(c-> !(c.contains("i") || c.contains("I")))
+                .toList());
     }
 }
