@@ -8,7 +8,7 @@ public class InfectedTown {
     }
 
     public String purge() {
-        if (citizens.contains("i")) return "";
+        if (citizens.contains("i") || citizens.contains("I")) return "";
         return citizens;
     }
 }
